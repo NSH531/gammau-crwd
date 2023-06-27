@@ -1,0 +1,21 @@
+﻿<!-- execute_script.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Execute Script</title>
+</head>
+<body>
+    <h1>Execute Script</h1>
+    <form method="post" action="{% url 'execute_script' %}">
+        {% csrf_token %}
+        <label for="hostname">Hostname:</label>
+        <input type="text" id="hostname" name="hostname" required>
+
+        <label for="script">PowerShell Script:</label>
+        <textarea id="script" name="script" required></textarea>
+
+        <input type="hidden" id="access_token" name="access_token" value="{{ access_token }}">
+        <button type="submit">Execute Script</button>
+    </form>
+</body>
+</html>
