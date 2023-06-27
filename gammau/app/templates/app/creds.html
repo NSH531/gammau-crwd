@@ -1,0 +1,36 @@
+<!-- main.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+</head>
+<body>
+    <h1>Login</h1>
+    {% if access_token %}
+    <!-- Access token exists, show execute script form -->
+    <form method="post" action="{% url 'execute_script' %}">
+        {% csrf_token %}
+        <label for="hostname">Hostname:</label>
+        <input type="text" id="hostname" name="hostname" required>
+
+        <label for="script">PowerShell Script:</label>
+        <textarea id="script" name="script" required></textarea>
+
+        <input type="hidden" id="access_token" name="access_token" value="{{ access_token }}">
+        <button type="submit">Execute Script</button>
+    </form>
+    {% else %}
+    <!-- Access token does not exist, show credentials form -->
+    <form method="post" action="{% url 'creds' %}">
+        {% csrf_token %}
+        <label for="api_key">API Key:</label>
+        <input type="text" id="api_key" name="api_key" required>
+
+        <label for="api_secret">API Secret:</label>
+        <input type="password" id="api_secret" name="api_secret" required>
+
+        <button type="submit">Get Access Token</button>
+    </form>
+    {% endif %}
+</body>
+</html>
