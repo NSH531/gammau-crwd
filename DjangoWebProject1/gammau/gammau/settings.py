@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application references
+# Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
     'app',

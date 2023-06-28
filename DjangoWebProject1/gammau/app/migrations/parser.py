@@ -1,16 +1,3 @@
-"""
-Definition of urls for DjangoWebProject1.
-"""
-
-from datetime import datetime
-from django.urls import path
-from django.contrib import admin
-from django.contrib.auth.views import LoginView, LogoutView
-from app import forms, views
-import app.migrations
-import app.migrations as K
-
-from django.db import models
 
 import django as D
 from django.db import models as model
@@ -19,7 +6,7 @@ out={}
 import os
 from django.db import models as model
 
-class Parser:
+class Parser():
     def __init__(self):
         self.x = 0
 
@@ -96,24 +83,4 @@ class Parser:
             class_name = f"Root_{int(self.x)}"
             self.parse_json_recursive(out, class_name, value)
             return model.CharField(max_length=255)
-
-
-
-urlpatterns = [
-    path('', views.main, name='main')
-,path("creds/",views.creds,name="creds"),
-path("exec/",views.execute_script,name="execute_script"),
-    path('home/', views.home, name='home'),
-    path('contact/', views.contact, name='contact'),
-    path('about/', views.about, name='about'),
-    path('admin/', admin.site.urls),
-
-#    path('', views.home, name='home'),
-]
-#x=app.migrations
-x1=Parser()
-print(x1)
-
-print(x1.parse_json(urlpatterns[0]))
-
 

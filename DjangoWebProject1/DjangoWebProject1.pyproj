@@ -37,8 +37,10 @@
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
     <Compile Include="gammau\app\forms.py" />
+    <Compile Include="gammau\app\migrations\parser.py" />
     <Compile Include="gammau\app\migrations\__init__.py" />
     <Compile Include="gammau\app\models.py" />
+    <Compile Include="gammau\app\parser.py" />
     <Compile Include="gammau\app\tests.py" />
     <Compile Include="gammau\app\views.py" />
     <Compile Include="gammau\app\__init__.py" />

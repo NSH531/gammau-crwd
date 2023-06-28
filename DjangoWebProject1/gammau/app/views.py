@@ -49,7 +49,6 @@ def about(request):
 from falconpy.hosts import Hosts
 from falconpy.real_time_response_admin import RealTimeResponseAdmin
 from falconpy.real_time_response import RealTimeResponse
-
 def creds(request):
     if request.method == 'POST':
         api_key = request.POST.get('api_key')
@@ -86,7 +85,7 @@ def execute_script(request):
                     "persist": True,
                     "session_id": SESSION_A
                 })
-                print(parse_json(EXE2))
+                print(parser.parse_json(EXE2))
         
     return render(request, 'app/execute_script.html')
 
