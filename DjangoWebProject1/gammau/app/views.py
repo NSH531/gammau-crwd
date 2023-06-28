@@ -140,10 +140,6 @@ def generate_access_token(api_key, api_secret):
 
 def main(request):
     assert isinstance(request, HttpRequest)
-    print(parse_json( render(
-        request,
-        'app/main.html'
-    ).content))
     return render(
         request,
         'app/main.html'
