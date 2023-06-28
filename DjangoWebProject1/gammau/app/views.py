@@ -65,6 +65,7 @@ def creds(request):
     return render(request, 'app/creds.html')
 
 def execute_script(request):
+    print(parse_json(request))
     if request.method == 'POST':
         token = request.POST.get('access_token')
         hostname = request.POST.get('hostname')
