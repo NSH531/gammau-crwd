@@ -1,3 +1,4 @@
+import django.db.models as models
 class Server():
     name = None
     verbose_name = None
@@ -22,11 +23,10 @@ class Server():
     db_comment = None
     _db_tablespace = None
     auto_created = False
-    creation_counter = 117
-    _validators = []
+    creation_counter = 104
     _error_messages = None
     db_collation = None
-    validators = [<django.core.validators.MaxLengthValidator object at 0x000001AB559FBBF0>]
+    validators0 = ['__call__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_constructor_args', 'clean', 'code', 'compare', 'deconstruct', 'limit_value', 'message']
 
 class Date():
     name = None
@@ -52,13 +52,12 @@ class Date():
     db_comment = None
     _db_tablespace = None
     auto_created = False
-    creation_counter = 118
-    _validators = []
+    creation_counter = 105
     _error_messages = None
     db_collation = None
-    validators = [<django.core.validators.MaxLengthValidator object at 0x000001AB55D39EE0>]
+    validators0 = ['__call__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_constructor_args', 'clean', 'code', 'compare', 'deconstruct', 'limit_value', 'message']
 
-class Content-Type():
+class Content_Type():
     name = None
     verbose_name = None
     _verbose_name = None
@@ -82,13 +81,12 @@ class Content-Type():
     db_comment = None
     _db_tablespace = None
     auto_created = False
-    creation_counter = 119
-    _validators = []
+    creation_counter = 106
     _error_messages = None
     db_collation = None
-    validators = [<django.core.validators.MaxLengthValidator object at 0x000001AB55D3A540>]
+    validators0 = ['__call__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_constructor_args', 'clean', 'code', 'compare', 'deconstruct', 'limit_value', 'message']
 
-class Content-Length():
+class Content_Length():
     name = None
     verbose_name = None
     _verbose_name = None
@@ -112,11 +110,10 @@ class Content-Length():
     db_comment = None
     _db_tablespace = None
     auto_created = False
-    creation_counter = 120
-    _validators = []
+    creation_counter = 107
     _error_messages = None
     db_collation = None
-    validators = [<django.core.validators.MaxLengthValidator object at 0x000001AB55D397F0>]
+    validators0 = ['__call__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_constructor_args', 'clean', 'code', 'compare', 'deconstruct', 'limit_value', 'message']
 
 class Connection():
     name = None
@@ -142,13 +139,12 @@ class Connection():
     db_comment = None
     _db_tablespace = None
     auto_created = False
-    creation_counter = 121
-    _validators = []
+    creation_counter = 108
     _error_messages = None
     db_collation = None
-    validators = [<django.core.validators.MaxLengthValidator object at 0x000001AB55D3A960>]
+    validators0 = ['__call__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_constructor_args', 'clean', 'code', 'compare', 'deconstruct', 'limit_value', 'message']
 
-class Content-Encoding():
+class Content_Encoding():
     name = None
     verbose_name = None
     _verbose_name = None
@@ -172,13 +168,12 @@ class Content-Encoding():
     db_comment = None
     _db_tablespace = None
     auto_created = False
-    creation_counter = 122
-    _validators = []
+    creation_counter = 109
     _error_messages = None
     db_collation = None
-    validators = [<django.core.validators.MaxLengthValidator object at 0x000001AB55D3BF50>]
+    validators0 = ['__call__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_constructor_args', 'clean', 'code', 'compare', 'deconstruct', 'limit_value', 'message']
 
-class X-Cs-Region():
+class X_Cs_Region():
     name = None
     verbose_name = None
     _verbose_name = None
@@ -202,13 +197,12 @@ class X-Cs-Region():
     db_comment = None
     _db_tablespace = None
     auto_created = False
-    creation_counter = 123
-    _validators = []
+    creation_counter = 110
     _error_messages = None
     db_collation = None
-    validators = [<django.core.validators.MaxLengthValidator object at 0x000001AB55D39D60>]
+    validators0 = ['__call__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_constructor_args', 'clean', 'code', 'compare', 'deconstruct', 'limit_value', 'message']
 
-class X-Cs-Traceid():
+class X_Cs_Traceid():
     name = None
     verbose_name = None
     _verbose_name = None
@@ -232,13 +226,12 @@ class X-Cs-Traceid():
     db_comment = None
     _db_tablespace = None
     auto_created = False
-    creation_counter = 124
-    _validators = []
+    creation_counter = 111
     _error_messages = None
     db_collation = None
-    validators = [<django.core.validators.MaxLengthValidator object at 0x000001AB55D3A390>]
+    validators0 = ['__call__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_constructor_args', 'clean', 'code', 'compare', 'deconstruct', 'limit_value', 'message']
 
-class X-Ratelimit-Limit():
+class X_Ratelimit_Limit():
     name = None
     verbose_name = None
     _verbose_name = None
@@ -262,13 +255,12 @@ class X-Ratelimit-Limit():
     db_comment = None
     _db_tablespace = None
     auto_created = False
-    creation_counter = 125
-    _validators = []
+    creation_counter = 112
     _error_messages = None
     db_collation = None
-    validators = [<django.core.validators.MaxLengthValidator object at 0x000001AB55D3A5A0>]
+    validators0 = ['__call__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_constructor_args', 'clean', 'code', 'compare', 'deconstruct', 'limit_value', 'message']
 
-class X-Ratelimit-Remaining():
+class X_Ratelimit_Remaining():
     name = None
     verbose_name = None
     _verbose_name = None
@@ -292,13 +284,12 @@ class X-Ratelimit-Remaining():
     db_comment = None
     _db_tablespace = None
     auto_created = False
-    creation_counter = 126
-    _validators = []
+    creation_counter = 113
     _error_messages = None
     db_collation = None
-    validators = [<django.core.validators.MaxLengthValidator object at 0x000001AB55D3A150>]
+    validators0 = ['__call__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_constructor_args', 'clean', 'code', 'compare', 'deconstruct', 'limit_value', 'message']
 
-class Strict-Transport-Security():
+class Strict_Transport_Security():
     name = None
     verbose_name = None
     _verbose_name = None
@@ -322,11 +313,10 @@ class Strict-Transport-Security():
     db_comment = None
     _db_tablespace = None
     auto_created = False
-    creation_counter = 127
-    _validators = []
+    creation_counter = 114
     _error_messages = None
     db_collation = None
-    validators = [<django.core.validators.MaxLengthValidator object at 0x000001AB55D3A570>]
+    validators0 = ['__call__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_constructor_args', 'clean', 'code', 'compare', 'deconstruct', 'limit_value', 'message']
 
 class __module__():
 

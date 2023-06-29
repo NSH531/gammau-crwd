@@ -6,6 +6,7 @@ from datetime import datetime
 #import imp
 from django.shortcuts import render
 from django.http import HttpRequest
+import DjangoWebProject1
 
 #import parser
 
@@ -71,14 +72,15 @@ def execute_script(request):
         hostname = request.POST.get('hostname')
         script = request.POST.get('script')
 
-        if token:
+        if bool(token):
             maya_admin = RealTimeResponseAdmin(access_token=token)
             maya = RealTimeResponse(access_token=token)
 
             host_ids = Hosts(access_token=token).QueryDevicesByFilter(filter=f"hostname:'{hostname}'")["body"]["resources"]
-
+        
             for host_id in host_ids:
                 SESSION_A = maya.init_session(device_ids=[host_id])
+
                 EXE2 = maya_admin.execute_admin_command(body={
                     "base_command": "runscript",
                     "command_string": f"runscript -Raw=```{script}```",
@@ -86,48 +88,48 @@ def execute_script(request):
                     "persist": True,
                     "session_id": SESSION_A
                 })
-                import app.parser
-                print(app.parser.parser.parse_json(app.parser.parser,EXE2))
+                #import app.parser
+                #app.parser.parser.parse_json(app.parser.parser,EXE2["body"])
         
     return render(request, 'app/execute_script.html')
 
-def parse_json(DATA):
-    # Implement your JSON parsing logic here
-    # Return the parsed data as a dictionary with class names as keys and corresponding attributes as values
-    parsed_data = DATA
-    import app.parser as P
-    parsed_data=P.parser.parse_json(P.parser,DATA)
-    class_dict = {}
-    for class_name, attributes in parsed_data.items():
-        new_class_attrs = {}
-        if   type(attributes)==str:
+#def parse_json(DATA):
+#    # Implement your JSON parsing logic here
+#    # Return the parsed data as a dictionary with class names as keys and corresponding attributes as values
+#    parsed_data = DATA
+#    import app.parser as P
+#    parsed_data=P.parser.parse_json(P.parser,DATA)
+#    class_dict = {}
+#    for class_name, attributes in parsed_data.items():
+#        new_class_attrs = {}
+#        if   type(attributes)==str:
              
-                new_class_attrs["attr"] = convert_value(attributes)
+#                new_class_attrs["attr"] = convert_value(attributes)
 
-        else:
-            for attr_name, attr_value in attributes.items():
-                new_class_attrs[attr_name] = convert_value(attr_value)
+#        else:
+#            for attr_name, attr_value in attributes.items():
+#                new_class_attrs[attr_name] = convert_value(attr_value)
 
-        # Create a new class with the class name and attributes
-        new_class = type(class_name, (object,), new_class_attrs)
-        class_dict[class_name] = new_class
+#        # Create a new class with the class name and attributes
+#        new_class = type(class_name, (object,), new_class_attrs)
+#        class_dict[class_name] = new_class
 
-    return class_dict
+#    return class_dict
 
-def convert_value(value):
-    # Implement conversion logic as per your requirements
-    # This function converts the value to the appropriate Python type
-    # You can extend this function to handle more data types if needed
-    if isinstance(value, str):
-        return str(value)
-    elif isinstance(value, int):
-        return int(value)
-    elif isinstance(value, float):
-        return float(value)
-    elif isinstance(value, bool):
-        return bool(value)
-    else:
-        return value
+#def convert_value(value):
+#    # Implement conversion logic as per your requirements
+#    # This function converts the value to the appropriate Python type
+#    # You can extend this function to handle more data types if needed
+#    if isinstance(value, str):
+#        return str(value)
+#    elif isinstance(value, int):
+#        return int(value)
+#    elif isinstance(value, float):
+#        return float(value)
+#    elif isinstance(value, bool):
+#        return bool(value)
+#    else:
+#        return value
 
 def generate_access_token(api_key, api_secret):
     import falconpy
@@ -146,3 +148,19 @@ def main(request):
         request,
         'app/main.html'
     )
+
+
+class Body():
+    def __init__(self):
+        self.dictionary=dict() 
+        self.meta=self.dict_to_classes(self,self.dictionary)
+
+    def dict_to_class(dictionary):
+        obj = Body()
+        for key, value in dictionary.items():
+            setattr(obj, key, value)
+        return obj
+
+   
+    
+    
