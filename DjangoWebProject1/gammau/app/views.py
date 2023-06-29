@@ -80,13 +80,13 @@ def execute_script(request):
         
             for host_id in host_ids:
                 SESSION_A = maya.init_session(device_ids=[host_id])
-
+                SB=maya.RTR_InitSession(body=dict(device_id=host_id))
                 EXE2 = maya_admin.execute_admin_command(body={
                     "base_command": "runscript",
                     "command_string": f"runscript -Raw=```{script}```",
                     "device_id": host_id,
                     "persist": True,
-                    "session_id": SESSION_A
+                    "session_id": SB["body"]["resources"][0]["session_id"]
                 })
                 #import app.parser
                 #app.parser.parser.parse_json(app.parser.parser,EXE2["body"])
