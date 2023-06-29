@@ -3,9 +3,11 @@ Definition of views.
 """
 
 from datetime import datetime
-import imp
+#import imp
 from django.shortcuts import render
 from django.http import HttpRequest
+
+#import parser
 
 def home(request):
     """Renders the home page."""
@@ -64,7 +66,6 @@ def creds(request):
     return render(request, 'app/creds.html')
 
 def execute_script(request):
-    print(parse_json(request))
     if request.method == 'POST':
         token = request.POST.get('access_token')
         hostname = request.POST.get('hostname')
@@ -85,7 +86,8 @@ def execute_script(request):
                     "persist": True,
                     "session_id": SESSION_A
                 })
-                print(parser.parse_json(EXE2))
+                import app.parser
+                print(app.parser.parser.parse_json(app.parser.parser,EXE2))
         
     return render(request, 'app/execute_script.html')
 
@@ -93,14 +95,14 @@ def parse_json(DATA):
     # Implement your JSON parsing logic here
     # Return the parsed data as a dictionary with class names as keys and corresponding attributes as values
     parsed_data = DATA
-
-    # Create classes dynamically based on parsed data
+    import app.parser as P
+    parsed_data=P.parser.parse_json(P.parser,DATA)
     class_dict = {}
     for class_name, attributes in parsed_data.items():
         new_class_attrs = {}
         if   type(attributes)==str:
              
-             new_class_attrs["attr"] = convert_value(attributes)
+                new_class_attrs["attr"] = convert_value(attributes)
 
         else:
             for attr_name, attr_value in attributes.items():
