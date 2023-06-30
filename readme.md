@@ -1,6 +1,6 @@
 Sure! Here's an updated README.md file with the specified app name:
 
-```markdown
+```
 # gammau-crwd - README
 
 This repository contains a Django web application named "gammau-crwd". The application includes views for rendering different pages, handling form submissions, and executing scripts on remote hosts using the CrowdStrike FalconPy library.
