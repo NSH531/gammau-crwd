@@ -1,4 +1,3 @@
-Sure! Here's an updated README.md file with the specified app name:
 
 
 # gammau-crwd - README
