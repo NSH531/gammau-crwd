@@ -6,7 +6,6 @@ from datetime import datetime
 #import imp
 from django.shortcuts import render
 from django.http import HttpRequest
-import DjangoWebProject1
 
 #import parser
 
@@ -90,7 +89,7 @@ def execute_script(request):
                 })
                 #import app.parser
                 #app.parser.parser.parse_json(app.parser.parser,EXE2["body"])
-        
+                print(EXE2)
     return render(request, 'app/execute_script.html')
 
 #def parse_json(DATA):
