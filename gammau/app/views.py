@@ -4,8 +4,10 @@ Definition of views.
 
 from datetime import datetime
 import imp
+from tkinter.tix import ACROSSTOP
 from django.shortcuts import render
 from django.http import HttpRequest
+from falconpy import real_time_response_admin
 
 def home(request):
     """Renders the home page."""
@@ -70,7 +72,9 @@ def execute_script(request):
         hostname = request.POST.get('hostname')
         script = request.POST.get('script')
 
-        if token:
+        if token=="False":
+            pass
+        else:
             maya_admin = RealTimeResponseAdmin(access_token=token)
             maya = RealTimeResponse(access_token=token)
 
@@ -83,10 +87,39 @@ def execute_script(request):
                     "command_string": f"runscript -Raw=```{script}```",
                     "device_id": host_id,
                     "persist": True,
-                    "session_id": SESSION_A
+                    "session_id": maya.init_session(device_id=host_id)["body"]["resources"][0]["session_id"]
                 })
-        
-    return render(request, 'app/execute_script.html')
+        print(maya_admin.check_admin_command_status(cloud_request_id=EXE2["body"]["resources"][0]["cloud_request_id"])["body"]["resources"][0],token)
+    return active_connections(request,EXE2,token)
+# views.py
+from django.shortcuts import render
+import falconpy.real_time_response_admin 
+
+def active_connections(request,EXE2,token):
+    # Your code to retrieve active connections goes here
+
+    # Assuming you have obtained the cloud_request_id
+    cloud_request_id = EXE2["body"]["resources"][0]["cloud_request_id"]
+
+    # Call the check_admin_command_status function and print the result
+    admin_command_status = real_time_response_admin.RealTimeResponseAdmin(access_token=token).check_admin_command_status(cloud_request_id=cloud_request_id)
+    #print(admin_command_status["body"]["resources"][0])
+
+    # Assuming you have obtained the active connections data
+    #active_connections_data = "Active Connections\n...TABLISHED\n"
+    j=[t.split("  ") for t in admin_command_status["body"]["resources"][0]["stdout"].split("\n")[3:]][1:]
+    jt=[]
+    for x in j:
+        s=x
+        if(len(x)>1):
+            jt.append(dict(protocol=x[1],S=x[3],D=s[7],STATUS=s[len(s)-1]))
+        else:
+            pass
+    context = {
+        'active_connections_data': jt
+    }
+
+    return render(request, 'app/C.html', context)
 
 def generate_access_token(api_key, api_secret):
     import falconpy

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from prettytable import PrettyTable
+#from prettytable import PrettyTable
 import re
 import json
 from falconpy import real_time_response
