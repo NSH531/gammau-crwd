@@ -15,6 +15,7 @@
     <input type="hidden" id="access_token" name="access_token" value="{{ access_token }}">
     <button type="submit">Execute Script</button>
 </form>
+{% include 'app/execute_script.html' %}
     {% else %}
 <!-- Access token does not exist, show credentials form -->
 <form method="post" action="{% url 'creds' %}">
