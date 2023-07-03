@@ -1,0 +1,10 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h1>Files:</h1>
+{% for L in list %}
+   <p>{{L.v}}</p>
+
+{% endfor %}
+{% endblock %}

@@ -1,6 +1,4 @@
-{% extends "app/layout.html" %}
 
-{% block content %}
 <h1>Login</h1>
     {% if access_token %}
 <!-- Access token exists, show execute script form -->
@@ -15,7 +13,6 @@
     <input type="hidden" id="access_token" name="access_token" value="{{ access_token }}">
     <button type="submit">Execute Script</button>
 </form>
-{% include 'app/execute_script.html' %}
     {% else %}
 <!-- Access token does not exist, show credentials form -->
 <form method="post" action="{% url 'creds' %}">
@@ -30,4 +27,3 @@
 </form>
     {% endif %}
 
-{% endblock %}

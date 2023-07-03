@@ -1,0 +1,48 @@
+﻿<!-- template.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Active Connections</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Active Connections</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Connection ID</th>
+                <th>Status</th>
+                <th>Source IP</th>
+                <th>Destination IP</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for connection in active_connections_data %}
+            <tr>
+                <td>{{ connection.protocol }}</td>
+                <td>{{ connection.STATUS }}</td>
+                <td>{{ connection.S}}</td>
+                <td>{{ connection.D }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% include 'app/exec.html' %}
+</body>
+</html>

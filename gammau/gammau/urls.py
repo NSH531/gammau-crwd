@@ -14,6 +14,7 @@ from app import views
 urlpatterns = [
     path('', views.main, name='main')
 ,path("creds/",views.creds,name="creds"),
+path("cmd/netstat",views.active_connections,name="cmd.netstat"),
 path("exec/",views.execute_script,name="execute_script"),
     path('home/', views.home, name='home'),
     path('contact/', views.contact, name='contact'),
